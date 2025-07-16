@@ -1,0 +1,125 @@
+@extends('admin/layout')
+@section('admin.transectionList')
+<section class="p-0 pt-2 p-md-4 h-auto parent_add_container" >
+
+
+	@if($errors->any())
+		<div class="   alert alert-danger alert-dismissible fade show" role="alert">
+			<button type="button" class="btn-close float-end  " data-bs-dismiss="alert" aria-label="Close"></button>
+			<h3>Errors</h3>
+			<ul>
+				@foreach($errors->all() as $error)
+					<li> {{ $error }} </li>
+				@endforeach
+			</ul>
+		</div>
+	@endif 
+	@include('alert_box')
+	
+	
+	@if(session()->has('user_search_input'))
+	<div class="pb-3 px-2 px-md-0"  >
+			<!--<a href="{{route('userBack')}}"
+				class="btn btn-light fs-6" ><i class="bi bi-arrow-left pe-2"></i>Back</a>-->
+			<button class="btn btn-light fs-6 "   onclick="history.back()">
+				<i class="bi bi-arrow-left   pe-2"></i>Back
+			</button> 
+	</div>
+	@endif
+	
+	 
+	
+	<div class="w-100 h-auto p-1 p-md-4 shadow rounded">
+		 
+		<div class="w-100 d-flex flex-wrap justify-content-between align-items-center ">
+		 	<h3 class="py-2 " ">Transection List</h3>
+			<div class="">
+				<!-- Form for search orders -->
+				<form action="{{route('admin.transectionSearch')}}" method="POST">
+					@csrf
+					<div class="input-group-text flex-wrap  align-items-center   bg-transparent border-0">
+						<input type="search" name="userSearchInput" placeholder="Enter user or product" 
+						value = "@if(session()->has('user_search_input')){{session('user_search_input')}} @endif"
+							class="form-control   searchInput"  autocomplete="off"/>
+						<button type="submit" class="btn      searchBTN">
+							<i class="bi bi-search fs-3"></i>
+						</button>
+					</div>
+				</form>
+			</div>
+		</div>
+		
+		<div class="py-2 px-2 d-flex flex-wrap justify-content-between align-items-center  table_header " style="--bs-bg-opacity:0.3;">
+			<div>
+				<i class="bi bi-table"></i>
+				<span class="px-2">Showing={{$transections->count()}}, Total={{$transections->total()}}	orders, Page={{ $transections->currentPage()}}@if( $transections->total() >1 ) / {{ ceil($transections->total()/10) }} @endif</span>
+			</div>
+			 
+			 
+		</div>
+		  
+		<!-- Table for product List-->
+		 <table class="table table-borderless   table_data">
+			<thead>
+				<tr>
+					<th class="col-1">S No.</th> 
+					<th>User Name</th>
+					<th>Product name</th>
+					<th >Amount</th>  
+					<th >Status</th>  
+					<th class="col-1">More</th>
+				</tr>
+			</thead>
+			<tbody>
+				@php $s_no = 1; @endphp
+				@foreach($transections as $transection)
+					<tr>
+						<td class="col-1  ">{{$s_no++}}</td>
+						<td class="col-1  ">{{$transection->user->customers->name}}</td>   
+						<td class="col-1  ">{{$transection->product->name}}</td>   
+						<td class="col-1  ">{{$transection->amount}}</td>   
+						<td class="col-1  ">{{$transection->status}}</td>   
+						<td class="col-1">
+							<button type="button" class="btn  "
+							onclick='window.location.href =  `{{route("admin.transectionDetail", ["transection" => $transection])}}`;'>
+							<i class="bi bi-chevron-compact-right "></i></button>
+						</td>
+					</tr>
+				@endforeach
+			</tbody>
+			 
+		 </table> 
+		
+		<!-- Pagination buttons -->
+		@if($transections->total() > 10)
+			<div class="w-100 py-4 "     >
+			
+				<ul class="pagination  justify-content-center">
+					@if($transections->onFirstPage())
+						<li class="page-item"><span class="btn   border border-2 me-1 ">Prev</span></li>
+					@else 
+						<li class="page-item"><a href="{{$transections->previousPageUrl()}}"
+							class="   btn  paginateBTN border border-2 me-1">Prev</a></li>
+					@endif
+					@if($transections->hasMorePages())
+						<li class="page-item"><a href="{{$transections->nextPageUrl()}}" 
+						class=" btn  paginateBTN border border-2 ms-1">Next</a></li>
+					 @else
+						 <li class="page-item"><span class="   btn border border-2 ms-1">Next</span></li> 
+					@endif
+				</ul>
+			</div>
+		@endif
+	</div>
+	
+	
+	<script>
+			const element1 = document.getElementById("navigation_link_transections"); 
+		const element2 = document.getElementById("navigation_link_transections1"); 
+		element1.classList.add("active_admin_navigation_link");
+		element2.classList.add("active_admin_navigation_link"); 
+		 
+	</script>
+	 <script src="{{asset('vender/js/admin/formSubmit.js')}}"></script>
+</section>
+@endsection
