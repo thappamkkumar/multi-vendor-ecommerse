@@ -271,7 +271,7 @@
 			</button>
 		  </div>
 		  <div class="modal-body">
-			 <img src="{{asset('user_profile/'.$user_image)}}"   
+			 <img src="{{$user_image}}"   
 							class="w-100 "    >
 		  </div>
 		  <div class="modal-footer">
