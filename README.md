@@ -136,6 +136,4 @@ database/
 Mukesh Kumar
 
 Portfolio: https://mukeshkumar.vercel.app
- 
- 
-This project is for educational and portfolio purposes.
+  
