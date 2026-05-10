@@ -25,8 +25,8 @@ The platform was designed to handle separate workflows for customers, vendors, a
 ### Product Details
 ![Product Details](./screenshots/product-details.png)
 
-### Vendor Dashboard
-![Vendor Dashboard](./screenshots/vendor-dashboard.png)
+### Product Management
+![Product Management](./screenshots/product-management.png)
 
 ### Admin Dashboard
 ![Admin Panel](./screenshots/admin-panel.png)
