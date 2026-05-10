@@ -1,139 +1,325 @@
-# 🛒 ShopHub – Multi-Vendor E-Commerce Platform
+# ShopHub — Multi-Vendor E-Commerce Platform
 
-A full-stack multi-vendor marketplace system where multiple sellers can manage products and orders, customers can discover and purchase items, and administrators control the entire platform including transactions and settlements.
+ShopHub is a full-stack multi-vendor marketplace platform designed to simulate real-world e-commerce systems where multiple vendors can manage products, customers can purchase items, and administrators can control platform operations, transactions, and user workflows.
 
----
+The platform focuses on centralized marketplace management while maintaining isolated vendor workflows, structured transaction handling, and scalable product discovery.
 
-## 🚀 Overview
-
-**ShopHub** is a scalable e-commerce marketplace designed to simulate real-world platforms like Amazon or Flipkart. It supports multiple vendors operating within a single system while maintaining centralized control over transactions, users, and product lifecycle.
-
-The system focuses on **role-based architecture**, **controlled payment flow**, and **efficient product discovery**.
+> Built independently as a complete end-to-end marketplace system.
 
 ---
 
-## ✨ Features
+## 🌐 Live Demo
 
-### 👤 Customer
-
-* Browse and filter products by category
-* Search products dynamically
-* View detailed product information
-* Add to cart and place orders
-* Track order history and manage profile
-
-### 🏪 Vendor
-
-* Add, update, and manage products
-* Select and manage product categories
-* Track orders and sales
-* View earnings and payment status
-* Manage vendor profile
-
-### 🛠️ Admin
-
-* Dashboard for complete platform overview
-* Manage users (customers & vendors)
-* Manage products and categories
-* Monitor orders and delivery status
-* Track payments and transactions
-* Filter data by vendor, customer, and products
+🔗 Demo: https://shophub.zya.me
 
 ---
 
-## 🏗️ System Architecture
+## 📸 Screenshots
 
-ShopHub is built using a **modular MVC architecture** with clear separation of concerns:
+### Homepage
+![Homepage](./screenshots/homepage.png)
 
-* **Frontend:** Blade templating (role-based UI rendering)
-* **Backend:** Laravel (business logic & request lifecycle)
-* **Database:** MySQL (relational schema)
-* **ORM:** Eloquent ORM
+### Product Listing
+![Products](./screenshots/products.png)
 
-### 🔄 Data Flow
+### Product Details
+![Product Details](./screenshots/product-details.png)
 
-Customer / Vendor / Admin → Frontend → Backend → Database
+### Vendor Dashboard
+![Vendor Dashboard](./screenshots/vendor-dashboard.png)
 
-### 💳 Payment Flow (Core Logic)
+### Admin Panel
+![Admin Panel](./screenshots/admin-panel.png)
 
-Customer → Admin (Payment Holding) → Vendor (After Commission Deduction)
+### Order Management
+![Orders](./screenshots/orders.png)
+
+---
+
+## 🧠 Architecture Diagram
+
+<p align="center">
+  <img src="./screenshots/architecture.png" alt="ShopHub Architecture Diagram" width="100%" />
+</p>
+
+---
+
+## 🚀 Core Features
+
+### Marketplace System
+- Multi-vendor marketplace architecture
+- Vendor-specific product management
+- Centralized platform administration
+- Product categorization and inventory handling
+
+### User Role System
+- Customer, Vendor, and Admin roles
+- Role-based access control
+- Separate workflows and dashboards
+- Protected administrative operations
+
+### Product & Discovery
+- Dynamic product search
+- Category-based filtering
+- Vendor-based product organization
+- Optimized product browsing experience
+
+### Order & Transaction System
+- Complete order lifecycle management
+- Centralized payment workflow
+- Vendor earnings tracking
+- Transaction and settlement handling
+
+### Administration
+- Admin dashboard
+- User and vendor management
+- Product moderation
+- Transaction monitoring
+- Order management system
+
+---
+
+## 🏗️ Project Overview
+
+ShopHub was designed to replicate real-world marketplace systems where multiple vendors operate within a centralized platform managed by administrators.
+
+The system enables:
+- vendors to manage products and orders
+- customers to browse and purchase items
+- administrators to oversee transactions, users, and marketplace operations
+
+The architecture focuses on structured role isolation, scalable product management, and centralized transaction control.
+
+---
+
+## 🧠 System Architecture
+
+ShopHub follows a modular Laravel MVC architecture with separated business logic, data handling, and presentation layers.
+
+### Frontend
+- Blade Templating Engine
+- Bootstrap
+- JavaScript
+
+### Backend
+- Laravel
+- MVC Architecture
+- Role-Based Middleware
+- Eloquent ORM
+
+### Database
+- MySQL relational database
+
+### Deployment
+- cPanel Hosting Environment
+- phpMyAdmin
+- Environment-based configuration
 
 ---
 
 ## ⚙️ Tech Stack
 
-* **Backend:** Laravel
-* **Frontend:** Blade
-* **Database:** MySQL
-* **ORM:** Eloquent
-* **Server Environment:** cPanel-based hosting
+### Frontend
+- Blade
+- Bootstrap
+- JavaScript
+
+### Backend
+- Laravel
+- PHP
+- Eloquent ORM
+
+### Database
+- MySQL
+
+### Deployment & Infrastructure
+- cPanel Hosting
+- phpMyAdmin
 
 ---
 
-## 🧠 Key Concepts Implemented
+## 🧩 Core Systems
 
-* Multi-role system (Customer, Vendor, Admin)
-* Role-based access control
-* Multi-vendor product management system
-* Centralized payment and settlement system
-* Order lifecycle management
-* Advanced filtering and search system
-
----
-
-## ⚡ Technical Highlights
-
-* Designed scalable relational database schema for multi-vendor system
-* Implemented role-based middleware for access control
-* Built dynamic product filtering using optimized queries
-* Designed centralized transaction system for secure payment handling
-* Structured backend using Laravel MVC for maintainability
+### Product & Catalog System
+Structured marketplace system supporting:
+- category-based organization
+- vendor product management
+- product filtering
+- scalable catalog browsing
 
 ---
 
-## 🚀 Deployment
+### User Role System
+Role-isolated workflows for:
+- customers
+- vendors
+- administrators
 
-The application was deployed on a **cPanel-based hosting environment** with full manual configuration:
-
-* Laravel application deployed manually
-* MySQL database configured using phpMyAdmin
-* Environment setup and server configuration handled independently
-* Backend and database integrated within hosting environment
+Each role operates through dedicated access control and dashboard systems.
 
 ---
 
-## 📂 Project Structure (Simplified)
+### Order & Payment System
+Centralized transaction workflow where:
+- customers complete purchases
+- admin manages transaction flow
+- vendor settlements occur after order completion
 
+---
+
+### Vendor Management System
+Vendor-focused dashboard enabling:
+- product management
+- order tracking
+- sales management
+- earnings overview
+
+---
+
+### Admin Management System
+Administrative controls for:
+- users
+- products
+- categories
+- transactions
+- marketplace operations
+
+---
+
+### Search & Filtering System
+Optimized discovery architecture featuring:
+- dynamic product search
+- category filtering
+- vendor filtering
+- efficient query handling
+
+---
+
+## 🧠 Technical Challenges Solved
+
+### Managing Multi-Role Authorization
+Implemented structured role-based middleware and isolated workflows for customers, vendors, and administrators.
+
+### Efficient Product Filtering & Search
+Built optimized query logic using Eloquent ORM for scalable filtering and product discovery.
+
+### Designing Centralized Payment Flow
+Implemented controlled transaction architecture where admin manages settlement flow between customers and vendors.
+
+### Maintaining Relational Data Consistency
+Designed normalized database schema with foreign key constraints for users, products, orders, and transactions.
+
+### Managing Monolithic Application Complexity
+Structured application modules and separated responsibilities within Laravel MVC architecture for maintainability.
+
+---
+
+## 📁 Project Structure
+
+```bash
+multi-vendor-ecommerse/
+├── app/
+├── bootstrap/
+├── config/
+├── database/
+├── public/
+├── resources/
+│   ├── views/
+│   ├── js/
+│   └── css/
+├── routes/
+├── storage/
+└── tests/
 ```
-app/
-├── Models/
-├── Http/
-│   ├── Controllers/
-│   └── Middleware/
-resources/
-├── views/ (Blade templates)
-routes/
-├── web.php
-database/
-├── migrations/
+
+---
+
+## 🛠️ Installation
+
+### Clone Repository
+
+```bash
+git clone https://github.com/thappamkkumar/multi-vendor-ecommerse.git
 ```
- 
----
-
-## 🎯 What This Project Demonstrates
-
-* Ability to build a real-world multi-vendor marketplace system
-* Strong understanding of role-based architecture and workflows
-* Experience designing secure payment and settlement systems
-* Efficient handling of complex database relationships
-* Full-stack development and deployment experience
 
 ---
- 
+
+### Backend Setup
+
+```bash
+composer install
+cp .env.example .env
+php artisan key:generate
+```
+
+Configure database credentials in `.env`
+
+Run migrations:
+
+```bash
+php artisan migrate
+```
+
+Start development server:
+
+```bash
+php artisan serve
+```
+
+---
+
+### Frontend Setup
+
+Install dependencies:
+
+```bash
+npm install
+```
+
+Compile frontend assets:
+
+```bash
+npm run dev
+```
+
+---
+
+## 🔐 Authentication & Authorization
+
+- Role-based authentication system
+- Customer, Vendor, and Admin access separation
+- Protected routes and middleware handling
+- Secure transaction workflows
+
+---
+
+## 📈 Engineering Highlights
+
+- Independently built full-stack marketplace architecture
+- Designed multi-role system with isolated workflows
+- Implemented centralized transaction management
+- Built optimized product search and filtering system
+- Structured scalable relational database schema
+- Managed complete deployment and server configuration
+- Developed modular Laravel MVC architecture
+
+---
+
+## 📌 Future Improvements
+
+- Payment gateway integration
+- Real-time order updates
+- Notification system
+- Redis caching
+- Advanced analytics dashboard
+- Docker-based deployment
+- Recommendation engine
+
+---
 
 ## 👨‍💻 Author
 
 Mukesh Kumar
 
-Portfolio: https://mukeshkumar.vercel.app
-  
+- Portfolio: https://mukeshkumar.vercel.app/
+- GitHub: https://github.com/thappamkkumar
