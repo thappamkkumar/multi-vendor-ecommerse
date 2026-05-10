@@ -1,10 +1,10 @@
 # ShopHub — Multi-Vendor E-Commerce Platform
 
-ShopHub is a full-stack multi-vendor marketplace platform designed to simulate real-world e-commerce systems where multiple vendors can manage products, customers can purchase items, and administrators can control platform operations, transactions, and user workflows.
+ShopHub is a full-stack multi-vendor marketplace platform where customers can discover and purchase products, vendors can manage their stores and orders, and administrators can control platform operations, transactions, and marketplace activities.
 
-The platform focuses on centralized marketplace management while maintaining isolated vendor workflows, structured transaction handling, and scalable product discovery.
+The platform was designed to handle separate workflows for customers, vendors, and administrators within a centralized marketplace system while maintaining structured order management and transaction flow.
 
-> Built independently as a complete end-to-end marketplace system.
+> Built independently as a complete end-to-end marketplace application.
 
 ---
 
@@ -16,10 +16,10 @@ The platform focuses on centralized marketplace management while maintaining iso
 
 ## 📸 Screenshots
 
-### Homepage
+### Platform Interface
 ![Homepage](./screenshots/homepage.png)
 
-### Product Listing
+### Product Browsing
 ![Products](./screenshots/products.png)
 
 ### Product Details
@@ -28,7 +28,7 @@ The platform focuses on centralized marketplace management while maintaining iso
 ### Vendor Dashboard
 ![Vendor Dashboard](./screenshots/vendor-dashboard.png)
 
-### Admin Panel
+### Admin Dashboard
 ![Admin Panel](./screenshots/admin-panel.png)
 
 ### Order Management
@@ -44,57 +44,68 @@ The platform focuses on centralized marketplace management while maintaining iso
 
 ---
 
-## 🚀 Core Features
+## 🚀 Features
 
-### Marketplace System
-- Multi-vendor marketplace architecture
-- Vendor-specific product management
-- Centralized platform administration
-- Product categorization and inventory handling
+### Customer Features
+- Browse latest and featured products
+- Explore products by categories
+- Search products dynamically
+- View detailed product information
+- Add products to cart
+- Place and manage orders
+- Complete payments through integrated payment gateway
 
-### User Role System
-- Customer, Vendor, and Admin roles
-- Role-based access control
-- Separate workflows and dashboards
-- Protected administrative operations
+---
 
-### Product & Discovery
-- Dynamic product search
-- Category-based filtering
-- Vendor-based product organization
-- Optimized product browsing experience
+### Vendor Features
+- Dedicated vendor dashboard
+- Add and manage products
+- Manage product inventory
+- Process customer orders
+- Track sales and transactions
+- View payment and earning details
 
-### Order & Transaction System
-- Complete order lifecycle management
-- Centralized payment workflow
-- Vendor earnings tracking
-- Transaction and settlement handling
+---
 
-### Administration
-- Admin dashboard
-- User and vendor management
-- Product moderation
-- Transaction monitoring
-- Order management system
+### Admin Features
+- Manage customers and vendors
+- Add and manage product categories
+- Manage products across the platform
+- Monitor and manage orders
+- Track customer and vendor transactions
+- Control marketplace operations and settlements
+
+---
+
+## 💳 Payment Workflow
+
+The platform follows a centralized transaction model:
+
+1. Customer places an order and completes payment
+2. Payment is received by the platform administrator
+3. Vendor processes and completes the order
+4. Admin releases payment to vendor after deducting platform commission
+
+This workflow helps maintain transaction control and structured vendor settlements.
 
 ---
 
 ## 🏗️ Project Overview
 
-ShopHub was designed to replicate real-world marketplace systems where multiple vendors operate within a centralized platform managed by administrators.
+ShopHub was designed as a centralized marketplace system where multiple vendors can operate independently within a single platform.
 
-The system enables:
-- vendors to manage products and orders
-- customers to browse and purchase items
-- administrators to oversee transactions, users, and marketplace operations
+The application supports:
+- product discovery and purchasing for customers
+- product and order management for vendors
+- complete operational control for administrators
 
-The architecture focuses on structured role isolation, scalable product management, and centralized transaction control.
+The system focuses on structured marketplace workflows, role-based access control, and scalable product management.
 
 ---
 
 ## 🧠 System Architecture
 
-ShopHub follows a modular Laravel MVC architecture with separated business logic, data handling, and presentation layers.
+ShopHub follows a modular Laravel MVC architecture with clearly separated business logic, data handling, and presentation layers.
 
 ### Frontend
 - Blade Templating Engine
@@ -132,7 +143,7 @@ ShopHub follows a modular Laravel MVC architecture with separated business logic
 ### Database
 - MySQL
 
-### Deployment & Infrastructure
+### Infrastructure
 - cPanel Hosting
 - phpMyAdmin
 
@@ -140,77 +151,70 @@ ShopHub follows a modular Laravel MVC architecture with separated business logic
 
 ## 🧩 Core Systems
 
-### Product & Catalog System
-Structured marketplace system supporting:
-- category-based organization
-- vendor product management
-- product filtering
-- scalable catalog browsing
+### Marketplace System
+- Multi-vendor product management
+- Category-based product organization
+- Product inventory management
+- Structured marketplace workflows
 
 ---
 
 ### User Role System
-Role-isolated workflows for:
-- customers
-- vendors
-- administrators
-
-Each role operates through dedicated access control and dashboard systems.
+- Customer role
+- Vendor role
+- Admin role
+- Role-based access control
 
 ---
 
-### Order & Payment System
-Centralized transaction workflow where:
-- customers complete purchases
-- admin manages transaction flow
-- vendor settlements occur after order completion
+### Order & Transaction System
+- Cart and checkout workflow
+- Order lifecycle management
+- Transaction tracking
+- Vendor settlement management
 
 ---
 
 ### Vendor Management System
-Vendor-focused dashboard enabling:
-- product management
-- order tracking
-- sales management
-- earnings overview
+- Product management
+- Inventory updates
+- Order handling
+- Sales tracking
 
 ---
 
 ### Admin Management System
-Administrative controls for:
-- users
-- products
-- categories
-- transactions
-- marketplace operations
+- User management
+- Product moderation
+- Category management
+- Order and transaction monitoring
 
 ---
 
-### Search & Filtering System
-Optimized discovery architecture featuring:
-- dynamic product search
-- category filtering
-- vendor filtering
-- efficient query handling
+### Product Search & Filtering
+- Dynamic product search
+- Category-based filtering
+- Vendor-based filtering
+- Optimized query handling
 
 ---
 
 ## 🧠 Technical Challenges Solved
 
-### Managing Multi-Role Authorization
+### Managing Multi-Role Workflows
 Implemented structured role-based middleware and isolated workflows for customers, vendors, and administrators.
 
-### Efficient Product Filtering & Search
-Built optimized query logic using Eloquent ORM for scalable filtering and product discovery.
+### Designing Centralized Transaction Handling
+Built a controlled payment workflow where the platform manages settlements between customers and vendors.
 
-### Designing Centralized Payment Flow
-Implemented controlled transaction architecture where admin manages settlement flow between customers and vendors.
+### Optimizing Product Search & Filtering
+Implemented dynamic query handling using Eloquent ORM for scalable product discovery.
 
 ### Maintaining Relational Data Consistency
-Designed normalized database schema with foreign key constraints for users, products, orders, and transactions.
+Designed normalized database relationships between users, products, orders, and transactions.
 
-### Managing Monolithic Application Complexity
-Structured application modules and separated responsibilities within Laravel MVC architecture for maintainability.
+### Managing Marketplace Complexity
+Structured application modules using Laravel MVC architecture for maintainability and scalability.
 
 ---
 
@@ -286,28 +290,26 @@ npm run dev
 
 ## 🔐 Authentication & Authorization
 
-- Role-based authentication system
-- Customer, Vendor, and Admin access separation
-- Protected routes and middleware handling
-- Secure transaction workflows
+- Role-based authentication
+- Protected routes and middleware
+- Secure access control for each user role
 
 ---
 
 ## 📈 Engineering Highlights
 
-- Independently built full-stack marketplace architecture
-- Designed multi-role system with isolated workflows
-- Implemented centralized transaction management
-- Built optimized product search and filtering system
-- Structured scalable relational database schema
-- Managed complete deployment and server configuration
-- Developed modular Laravel MVC architecture
+- Independently built complete marketplace architecture
+- Designed multi-role workflow system
+- Implemented centralized payment handling
+- Built scalable product search and filtering system
+- Structured relational database architecture
+- Managed deployment and hosting configuration
+- Developed modular Laravel MVC application structure
 
 ---
 
 ## 📌 Future Improvements
 
-- Payment gateway integration
 - Real-time order updates
 - Notification system
 - Redis caching
