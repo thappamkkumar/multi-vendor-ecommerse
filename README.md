@@ -269,23 +269,7 @@ Start development server:
 ```bash
 php artisan serve
 ```
-
----
-
-### Frontend Setup
-
-Install dependencies:
-
-```bash
-npm install
-```
-
-Compile frontend assets:
-
-```bash
-npm run dev
-```
-
+ 
 ---
 
 ## 🔐 Authentication & Authorization
